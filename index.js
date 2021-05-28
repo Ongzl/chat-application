@@ -5,6 +5,7 @@
  */
 
 var app = require('express')();
+var express=require('express');
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var path = require('path');
@@ -17,6 +18,16 @@ app.get('/', function(req, res){
     app.use(express.static(path.join(__dirname)));
     res.sendFile(path.join(__dirname, '../chat-application', 'index.html'));
 });
+
+// // All other GET requests not handled before will return Chat app
+// app.get('*', function(req, res){
+//     var express=require('express');
+//     app.use(express.static(path.join(__dirname)));
+//     res.sendFile(path.join(__dirname, '../chat-application', 'index.html'));
+// });
+//
+// // Have Node serve the files for our built React app
+ app.use(express.static(path.resolve(__dirname, '../front_end/build')));
 
 // Register events on socket connection
 io.on('connection', function(socket){
@@ -53,6 +64,6 @@ io.on('connection', function(socket){
 });
 
 // Listen application request on port 3000
-http.listen(3000, function(){
-    console.log('listening on *:3000');
+http.listen(9000, function(){
+    console.log('listening on *:9000');
 });
