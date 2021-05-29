@@ -4,11 +4,21 @@
  *  prior written authorization from Sandip Salunke
  */
 
+// var firebase = require("firebase/app");
+// var user = firebase.auth().currentUser;
 var socket = io();
 var allChatMessages = [];
 var chatNotificationCount = [];
 var myUser = {};
 var myFriend = {};
+
+// firebase.auth().onAuthStateChanged(function(user) {
+//     if (user) {
+//         // User is signed in.
+//     } else {
+//         // No user is signed in.
+//     }
+// });
 
 // Document Ready function called automatically on page load
 $(document).ready(function(){
@@ -17,14 +27,18 @@ $(document).ready(function(){
 
 // Function to ask user to supply his/her name before entering a chatbox
 function loginMe() {
-    var person = prompt("Please enter your name:", "Sandip Salunke");
-    if (/([^\s])/.test(person) && person != null && person != "") {
-        //$('#user').val(person);
-        socket.emit('newUser', person);
-        document.title = person;
-    } else {
-        location.reload();
-    }
+     var person = prompt("Please enter your name:", "Sandip Salunke");//user;
+
+     if (/([^\s])/.test(person) && person != null && person != "") {
+         $('#user').val(person);
+         socket.emit('newUser', person);
+         document.title = person;
+     } else {
+         location.reload();
+     }
+    // $('#user').val(person);
+    //socket.emit('newUser', person);
+    // document.title = user;
 }
 
 // Function to be called when sent a message from chatbox

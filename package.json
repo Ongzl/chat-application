@@ -3,14 +3,17 @@
   "version": "1.0.0",
   "description": "my first socket.io app",
   "dependencies": {
+    "@firebase/app": "^0.6.22",
+    "@firebase/auth": "0.16.6",
     "@material-ui/core": "^4.11.4",
     "@react-firebase/auth": "^0.2.10",
     "express": "^4.10.2",
+    "firebase": "^8.6.3",
     "http": "0.0.0",
     "path": "^0.12.7",
     "socket.io": "^2.1.1"
   },
-  "scripts":{
+  "scripts": {
     "start": "node index.js",
     "build": "cd front_end && npm install && npm run build"
   }
