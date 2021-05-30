@@ -4,14 +4,39 @@
  *  prior written authorization from Sandip Salunke
  */
 
+
+
+// var firebase = require("firebase/app");
+// require("firebase/auth");
+
 var app = require('express')();
 var express=require('express');
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var path = require('path');
-//var firebase = require("firebase/app");
-
-
+// var firebase = require("firebase/app");
+//
+//
+// var firebaseConfig = {
+//     apiKey: "AIzaSyA-bROuQeYtw5ZtdGJVGyPtRmiemm7466I",
+//     authDomain: "chatella-1e8ab.firebaseapp.com",
+//     projectId: "chatella-1e8ab",
+//     storageBucket: "chatella-1e8ab.appspot.com",
+//     messagingSenderId: "998337225486",
+//     appId: "1:998337225486:web:511c2d7ff5d09db7802d5f",
+//     measurementId: "G-L6JY0BD56M"
+// };
+// firebase.initializeApp(firebaseConfig);
+//
+// // var person = user.displayName;
+// // exports.name = person;
+// module.exports = handleGoogleSignIn = (firebase) => {
+//     const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
+//     firebase.auth().signInWithPopup(googleAuthProvider).then((result) => {
+//         var user = result.user;
+//     });
+// ;
+// };
 
 var onlineUsers = [];
 

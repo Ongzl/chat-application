@@ -4,14 +4,18 @@
  *  prior written authorization from Sandip Salunke
  */
 
-// var firebase = require("firebase/app");
-// var user = firebase.auth().currentUser;
+
+//import index from "./index";
+
 var socket = io();
 var allChatMessages = [];
 var chatNotificationCount = [];
 var myUser = {};
 var myFriend = {};
-
+//var index = require('./index');
+//var person = index.name;
+//var login = require('./index');
+//var login = index.
 // firebase.auth().onAuthStateChanged(function(user) {
 //     if (user) {
 //         // User is signed in.
