@@ -44,7 +44,7 @@ var onlineUsers = [];
 app.get('/', function(req, res){
     var express=require('express');
     app.use(express.static(path.join(__dirname)));
-    res.sendFile(path.join(__dirname, '../chat-application', 'index.html'));
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 // // All other GET requests not handled before will return Chat app
