@@ -59,7 +59,7 @@ app.get('/', function(req, res){
 
 // Register events on socket connection
 io.on('connection', function(socket){
-
+    console.log('connected')
     // Listen to chantMessage event sent by client and emit a chatMessage to the client
     socket.on('chatMessage', function(message){
         io.to(message.receiver).emit('chatMessage', message);
