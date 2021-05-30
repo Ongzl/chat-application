@@ -92,6 +92,6 @@ io.on('connection', function(socket){
 });
 
 // Listen application request on port 3000
-http.listen(9000, function(){
+http.listen(process.env.PORT || 3000, function (){
     console.log('listening on *:9000');
 });
