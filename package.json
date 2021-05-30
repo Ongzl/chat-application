@@ -15,6 +15,6 @@
   },
   "scripts": {
     "start": "node index.js",
-    "build": "cd front_end && npm install && npm run build"
+    "build": "npm install && npm run build"
   }
 }
